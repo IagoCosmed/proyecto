@@ -1,0 +1,133 @@
+<?page title="Edición de formaciones"   contentType="text/html;charset=UTF-8"?>
+  <!-- -->
+<zk>
+    
+    <window id="layout" border="none"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('org.zkoss.zkspringboot.model.DishesView')">
+           <!-- form="@id('fx') @load(vm.selectedRecord) @save(vm.selectedRecord, before='saveThis')" -->
+           <div>
+        <separator/>
+            <div width="96%">
+                <span width="100%">
+                    <div sclass="sectionTitle">
+                        <separator/>
+                        <label id="lcaption" class="titleLabel" style="color: #5F92B8;"
+                               value="@load(fxStatus.dirty?'Datos sin guardar':'Añadir/Editar menú')"/>
+                        <separator/>
+                    </div>
+                </span>
+                <div id="buttonsDiv" style="float:right;margin-top:6px;">
+                    <button label="Guardar y cerrar" class="btn formation"
+                            onClick="@command('saveThis', action=0)">
+                    </button>
+                    <button label="Guardar y seguir" class="btn formation"
+                            onClick="@command('saveThis', action=1)">
+                    </button>
+                    <button
+                            label="Cancelar" class="btn formation"
+                            onClick="@command('cancel')">
+                    </button>
+                </div>
+                <div style="clear: both;"></div>
+                <div sclass="sectionSeperator"></div>
+            </div>
+            
+            <span width="100%">
+                <div>
+                    <separator/>
+                    <label value="Datos del menú" style="margin-left:16px;" />
+                    <separator/>
+                </div>
+            </span>
+            <panel width="95%" height="200px">
+                <panelchildren>
+                    <grid class="listadoGenericoAdmin">
+                        <columns>
+                            <column hflex="50%"></column>
+                            <column hflex="30%"></column>
+                            <column hflex="20%"></column>
+                        </columns>
+                        <rows>
+                            <row>
+                                <vlayout hflex="1">
+                                    <label value="Nombre del menú" class="label"/>
+                                    <textbox id="nombre" constraint="no empty: Campo requerido" width="100%"
+                                              class="textbox"
+                                             />
+                                </vlayout>
+<!-- value="@bind(fx.nombre)" -->
+                                <vlayout hflex="1">
+                                    <label value="Precio" class="label"/>
+                                    <doublebox id="codigo"  width="70%"
+                                              class="textbox"/>
+                                </vlayout>
+                                <vlayout hflex="1">
+                                	<label value="Activo" class="label"/>
+                                    <combobox  width="150px"> 
+                                    <comboitem label="Si"/>
+                                    <comboitem label="No"/>
+                                    </combobox>
+                                </vlayout>
+                            </row>
+                        </rows>
+                    </grid>
+                </panelchildren>
+            </panel>
+            <panel width="95%" style="margin-top:10px" height="270px">
+                <panelchildren>
+                    <grid class="listadoGenericoAdmin">
+                        <columns>
+                            <column hflex="1"></column>
+                        </columns>
+                        <rows>
+                            <row>
+                                <vlayout>
+                                    <label value="Descripción" class="label"/>
+                                    <textbox id="descripcion" hflex="2" rows="6"  class="textbox"  value=""/>
+                                </vlayout>
+                            </row>
+                        </rows>
+                    </grid>
+                </panelchildren>
+            </panel>
+            <separator/>
+            <div style="float: right;margin-right: 80px;">
+                    <button  label="Añadir platos"  onClick="@command('addPlatos')" />
+                </div>
+            <panel width="95%" style="margin-top:10px" height="180px" >
+                <panelchildren>
+                 
+                    <grid class="listadoGenericoAdmin">
+                        <rows >
+                            <row>
+                                <vlayout>
+                                    <label value="Platos" class="label"/>
+                               <grid class="listadoGenericoAdmin"  width="100%" style="margin-left:0px;margin-right:5px">
+                        <columns >
+                            <column label="Código" align="center" width="10%" class="columnRequisito"/>
+                            <column label="Nombre" align="center" width="40%" class="columnRequisito"/>
+                            <column label="Precio" align="center"/>
+                        </columns>
+                        <rows>
+           <!-- model="@load(vm.requisitoFileList)" -->                 
+                                <row align="center">
+                                    <label value="" maxlength="65" class="row"/>
+                                    <label value="" maxlength="65" class="row"/>
+                                    <label value="" maxlength="65" class="row"/>
+                                </row>
+                            
+                        </rows>
+                    </grid>
+                                </vlayout>
+                            </row>
+                        </rows>
+                    </grid>
+                </panelchildren>
+            </panel>
+        </div>
+    </window>
+    
+    
+    
+</zk>

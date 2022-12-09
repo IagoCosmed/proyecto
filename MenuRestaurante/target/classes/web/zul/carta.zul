@@ -1,0 +1,69 @@
+<zk>
+<style>
+
+@media screen and (max-width: 1024px) {
+	.z-hlayout-inner {
+		width: 50%;
+		height: 50%;
+	}
+	.z-hlayout-inner:last-child {
+		width: 100%;
+		display: block;
+	}
+}
+@media screen and (max-width: 750px) {
+	.z-hlayout-inner {
+		width: 50%;
+		height: 33%;
+		display: block;
+	}
+}
+</style>
+    <hlayout vflex="1">
+    <window>
+    <grid>
+        <auxhead>
+            <auxheader colspan="4" label="Menu de hoy" style="font-weight: bold;font-size: 20px;text-align:center"/>
+        </auxhead>
+        <columns>
+            <column hflex="5">Plato</column>
+            <column hflex="1">Precio</column>
+            <column hflex="3">Contenido</column>
+            <column hflex="4">Alergias</column>
+        </columns>
+        <rows sclass="narrow">
+            <row>
+                <label value="Pollo y arroz" />
+                <label value="3€" />
+                <label value="Pollo y arroz con verduras frescas" />
+                <label value="No" />
+            </row>
+            <row>
+                <label value="Huevos con jamon" />
+                <label value="4€" />
+                <label value="Jamon, huevos y salsa barbacoa" />
+                <label value="Huevos" />
+            </row>
+            <row>
+                <label value="Platano frito" />
+                <label value="1€" />
+                <label value="Platano" />
+                <label value="No" />
+            </row>
+            <row>
+                <label value="Cus cus" />
+                <label value="3,5€" />
+                <label value="Pasta , carnero" />
+                <label value="No" />
+            </row>
+            <row>
+                <label value="Shusi" />
+                <label value="8€" />
+                <label value=" Pescado crudo, algas Nori " />
+                <label value="No" />
+            </row>
+        </rows>
+    </grid>
+    </window>
+    </hlayout>
+</zk>

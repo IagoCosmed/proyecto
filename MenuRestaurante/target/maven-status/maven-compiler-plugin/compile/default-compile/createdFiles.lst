@@ -1,0 +1,12 @@
+org\zkoss\zkspringboot\security\Application.class
+org\zkoss\zkspringboot\model\SelectingDishesView.class
+org\zkoss\zkspringboot\security\WebSecurityConfig.class
+org\zkoss\zkspringboot\service\PlatoService.class
+org\zkoss\zkspringboot\model\SelectingDishesView$ChooseEvent.class
+org\zkoss\zkspringboot\entity\Menu.class
+org\zkoss\zkspringboot\service\serviceImpl\PlatoServiceImpl.class
+org\zkoss\zkspringboot\model\StartView.class
+org\zkoss\zkspringboot\specification\PlatoSpecification.class
+org\zkoss\zkspringboot\repository\PlatoRepository.class
+org\zkoss\zkspringboot\model\DishesView.class
+org\zkoss\zkspringboot\entity\Plato.class

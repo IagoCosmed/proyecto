@@ -1,0 +1,52 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="platos_modal" title="Selección de platos" border="normal" 
+ apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('org.zkoss.zkspringboot.model.SelectingDishesView')">
+
+<!-- model="@load(vm.leftListModel)" <template name="model"> </template>	-->
+
+<hlayout  style="padding:7px" >
+	<vbox vflex="true">
+     	<label class="label" value="Seleccionables"/>                       
+		<listbox id="left" width="800px" vflex="true"  class="popUp_requisitos"  oddRowSclass=" "  >
+		  <listhead  >
+		    <listheader label="Código" width="150px" class="requisito" />
+		    <listheader label="Nombre" width="420px" class="requisito" />
+		  </listhead>
+		  
+		  <listitem value="@bind(each)" >
+			  	<listcell label="@bind(each.codigo)" class="requisito" />
+	   			 <listcell label="@bind(each.titulo)" class="requisito"/>
+		  </listitem>
+		  
+		</listbox>
+	</vbox>
+		<vbox spacing="10px" width="24px" height="100%"  class="botton_Required">
+			<div class="wrapper" style="padding-top:150px">
+				<button id="chooseBtn" label="Añadir" width="150px" onClick="@command('removeProjects')"/>
+				<separator/>
+				<button id="removeBtn" label="Quitar" width="150px" onClick="@command('addProjects')"/>
+             </div>
+	    </vbox>
+	<!-- model="@init(vm.rightListModel)" <template name="model"></template>-->
+	<vbox vflex="true">
+		<label class="label" value="Elegidos"/>
+		<listbox id="right"  width="800px" vflex="true" multiple="true" class="popUp_requisitos"  >
+		  <listhead>
+		    <listheader label="Código" width="140px" class="requisito"/>
+		    <listheader label="Nombre" width="430px" class="requisito"/>
+		  </listhead>
+		  
+		  <listitem value="@bind(each)" >
+		  	<listcell label="@load(each.codigo)" class="requisito"/>	
+   			 <listcell label="@load(each.titulo)" class="requisito"/>
+		  </listitem>
+		  
+		</listbox>
+	</vbox>
+	
+  </hlayout>
+  <button class="btn formation" label="Cerrar" onClick="@command('back')" style="float:right;margin-left:5px"/>
+  <button class="btn formation" label="Aceptar" onClick="@command('save')" style="float:right;margin-left:5px"/>
+</window>
+</zk>

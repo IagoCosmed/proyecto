@@ -1,0 +1,36 @@
+<?page title="Bienvenida" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:n="native">
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-gap: 20px;
+            margin: 50px;
+        }
+    </style>
+ 
+    <window sizable="true" border="normal" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('org.zkoss.zkspringboot.model.StartView')">
+    <div sclass="grid">
+        <div sclass="main">
+            <n:h1>¡Bienvenida/o!</n:h1>
+            Bienvenida/o a su aplicación de gestión de cartas y menús. A su derecha dispone de los enlaces que le llevaran al sitio de edición de cartas así como a la gestión de reservas del local También dispone de enlaces de ayuda donde contactarnos así como acceso a la documentación de la aplicación. 
+        </div>
+        <div sclass="sidebar">
+ 
+            <groupbox title="Acciones" >
+                <vlayout>
+                <button label="Edicion de menú" onClick="@command('editMenu')" width="200px"/>
+                <button label="Menu vigente " onClick="@command('viewMenu')" width="200px"/>
+                </vlayout>
+            </groupbox>
+            <groupbox title="Links relacionados">
+                <vlayout>
+                <a href="http://www.zkoss.org" target="_blank">Ayuda</a>
+                <a href="http://www.zkoss.org/documentation#References" target="_blank">Documentación</a>
+                </vlayout>
+            </groupbox>
+        </div>
+    </div>
+    </window>
+</zk>
+
