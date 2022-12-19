@@ -33,7 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .requestMatchers(req -> "rmDesktop".equals(req.getParameter("cmd_0"))).permitAll() // allow desktop cleanup from ZATS
             .mvcMatchers("/","/login","/logout","/carta").permitAll() //permit the URL for login and logout
             .mvcMatchers("/secure").hasRole("USER")
-            .anyRequest().authenticated() //enforce all requests to be authenticated
             .and()
             .formLogin()
             .loginPage("/login").defaultSuccessUrl("/secure/main")

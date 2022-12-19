@@ -38,7 +38,7 @@ public class SelectingDishesView extends SelectorComposer<Component>{
 	 @Wire
 	   private Listbox right = new Listbox();
 	 
-	   private List<Plato> platoList;
+	   
 	   private ListModelList<Plato> leftListModel ; 
 	   private ListModelList<Plato> rightListModel ; 
 	   
@@ -58,6 +58,8 @@ public class SelectingDishesView extends SelectorComposer<Component>{
                left.setMultiple(true);
           }
        }
+	   
+	   
 	   
 	   @Command
 	   public void addProjects() {
@@ -105,7 +107,7 @@ public class SelectingDishesView extends SelectorComposer<Component>{
 	           for (Plato requisito : rightListModel) {
 	               nameList.add(requisito.getNombre());
 	           }
-	           listModelList.addAll(platoService.getPlatoWhereTitleIsNotLikeAnyWord(nameList));
+	          // listModelList.addAll(platoService.getPlatoWhereTitleIsNotLikeAnyWord(nameList));
 	           }
 //	  TOFIX     else {
 //	               listModelList.addAll(platoService.listOfPlato());

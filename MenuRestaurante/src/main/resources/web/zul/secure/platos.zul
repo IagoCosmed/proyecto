@@ -1,4 +1,4 @@
-<?page title="Edición de formaciones"   contentType="text/html;charset=UTF-8"?>
+<?page title="Edición de menús"   contentType="text/html;charset=UTF-8"?>
   <!-- -->
 <zk>
     
@@ -98,25 +98,25 @@
             <panel width="95%" style="margin-top:10px" height="180px" >
                 <panelchildren>
                  
-                    <grid class="listadoGenericoAdmin">
+                    <grid class="listadoGenericoAdmin" id="platoid">
                         <rows >
                             <row>
                                 <vlayout>
                                     <label value="Platos" class="label"/>
-                               <grid class="listadoGenericoAdmin"  width="100%" style="margin-left:0px;margin-right:5px">
+                               <grid class="listadoGenericoAdmin"  width="100%" style="margin-left:0px;margin-right:5px" model="@init(vm.platoFileList)" mold="paging" pageSize="8">
                         <columns >
                             <column label="Código" align="center" width="10%" class="columnRequisito"/>
                             <column label="Nombre" align="center" width="40%" class="columnRequisito"/>
                             <column label="Precio" align="center"/>
                         </columns>
                         <rows>
-           <!-- model="@load(vm.requisitoFileList)" -->                 
-                                <row align="center">
-                                    <label value="" maxlength="65" class="row"/>
-                                    <label value="" maxlength="65" class="row"/>
-                                    <label value="" maxlength="65" class="row"/>
+                        	<template name="model">
+                                <row value="@bind(each)" align="center">
+                                    <label value="@bind(each.id)" maxlength="65" class="row"/>
+                                    <label value="@bind(each.nombre)" maxlength="65" class="row"/>
+                                    <label value="@bind(each.precio)" maxlength="65" class="row"/>
                                 </row>
-                            
+                            </template>
                         </rows>
                     </grid>
                                 </vlayout>

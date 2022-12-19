@@ -16,6 +16,6 @@ public class StartView extends BindComposer<Component>{
 	
 	@Command
 	public void viewMenu() {
-		Executions.sendRedirect("/carta");
+		Executions.sendRedirect("/secure/AllDishes");
 	}
 }

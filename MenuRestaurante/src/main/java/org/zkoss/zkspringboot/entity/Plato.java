@@ -14,8 +14,9 @@ import javax.persistence.Table;
 
 
 
+
 @Entity
-@Table( name = "Platos_disp")
+@Table( name = "Platos_disp", schema = "codigoqr")
 public class Plato {
 	
 	@Id
@@ -25,15 +26,16 @@ public class Plato {
 	@Column( name = "nombre")
 	private String nombre;
 	@Column( name = "precio")
-	private double precio;
+	private Double precio;
 	@Column( name = "ingredientes")
 	private String ingredientes;
 	
 	public Plato() {
-		
+		super();
 	}
 	
 	public Plato(String nombre, double precio, String ingredientes ) {
+		super();
 		this.nombre = nombre;
 		this.precio = precio;
 		this.ingredientes = ingredientes;

@@ -9,8 +9,8 @@ import org.zkoss.zkspringboot.repository.PlatoRepository;
 
 public interface PlatoService {
 	
-	public Plato addPlato (String nombre, double precio, String ingrdientes);
-	public Plato findPlatoByNombrePlato (String nombre);
-	public List<Plato> listOfPlato();
+	public List<Plato> findAll();
+	
+	
 	
 }

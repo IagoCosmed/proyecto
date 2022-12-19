@@ -19,14 +19,14 @@
  
             <groupbox title="Acciones" >
                 <vlayout>
-                <button label="Edicion de menú" onClick="@command('editMenu')" width="200px"/>
-                <button label="Menu vigente " onClick="@command('viewMenu')" width="200px"/>
+                <button label="Edición de menú" onClick="@command('editMenu')" width="200px"/>
+                <button label="Edición de plato" onClick="@command('viewMenu')" width="200px"/>
                 </vlayout>
             </groupbox>
             <groupbox title="Links relacionados">
                 <vlayout>
-                <a href="http://www.zkoss.org" target="_blank">Ayuda</a>
-                <a href="http://www.zkoss.org/documentation#References" target="_blank">Documentación</a>
+                <a href="http://localhost:8080/carta" target="_blank">Carta vigente</a>
+                <a href="https://google.com" target="_blank">Ayuda</a>
                 </vlayout>
             </groupbox>
         </div>

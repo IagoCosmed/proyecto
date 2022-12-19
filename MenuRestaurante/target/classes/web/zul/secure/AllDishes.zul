@@ -1,0 +1,50 @@
+<?page title="Platos disponibles" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Platos disponibles" border="normal" apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('org.zkoss.zkspringboot.model.AllDishes')">
+            <hlayout style="margin-button:15px;">
+            <div id="buttonsDiv" style="margin-left:1600px" >
+                    <button label="Añadir plato" class="btn formation " 
+                            onClick="@command('addDishes')">
+                    </button>
+                    <button label="Volver" class="btn formation" 
+                            onClick="@command('returnAt')">
+                    </button>
+                </div>
+                </hlayout>
+                <separator/>
+ <grid class="listadoGenericoAdmin" id="platoid">
+                        <rows >
+                            <row>
+                                <vlayout>
+                                    <label value="Platos" class="label"/>
+                               <grid class="listadoGenericoAdmin"  width="100%" style="margin-left:0px;margin-right:5px" model="@init(vm.platoList)" mold="paging" pageSize="8">
+                        <columns >
+                            <column label="Código" align="center" width="10%" class="columnRequisito"/>
+                            <column label="Nombre" align="center" width="40%" class="columnRequisito"/>
+                            <column label="Precio" align="center"/>
+                            <column label="" align="center" width="15%"/>
+                        </columns>
+                        <rows>
+                        	<template name="model">
+                                <row value="@bind(each)" align="center">
+                                    <label value="@bind(each.id)" maxlength="65" class="row"/>
+                                    <label value="@bind(each.nombre)" maxlength="65" class="row"/>
+                                    <label value="@bind(each.precio)" maxlength="65" class="row"/>
+                                    <div style="padding-top:2px">
+                                    
+                                    <button class="iconEdit" label="+"
+                                            onClick="@command('onEditPlato',userRecord=each)"/>
+                                    <button class="iconDelete" label="-"
+                                            onClick="@command('onDeletePlato',userRecord=each)"/>
+                                </div>
+                                </row>
+                            </template>
+                        </rows>
+                    </grid>
+                                </vlayout>
+                            </row>
+                        </rows>
+                    </grid>
+</window>
+</zk>
